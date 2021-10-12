@@ -11,7 +11,6 @@ public class Student {
 //    primary key
     @Id
     private String StudentId;
-
     private String StudentName;
     private String StudentSection;
 
