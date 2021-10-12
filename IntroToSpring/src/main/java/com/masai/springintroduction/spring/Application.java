@@ -12,7 +12,7 @@ public class Application {
 		// Application Context containing all the beans running
 		ApplicationContext applicationContext = SpringApplication.run(Application.class, args);
 
-		// using applicationContext, BinarySearchImpl object is created
+		// using applicationContext, BinarySearchImpl object is called
 		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
 
 		int x = binarySearch.binarySearch(new int[]{12,4,6}, 3);
