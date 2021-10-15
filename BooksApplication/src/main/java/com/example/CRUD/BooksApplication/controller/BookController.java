@@ -23,6 +23,8 @@ public class BookController {
     public List<BookEntity> getBookById(@PathVariable("id") String bookId){
         List<BookEntity> bookEntity = bookService.getBookById(bookId);
         return bookEntity;
+//        String bookEntity = bookService.getBookById(bookId);
+//        return bookEntity;
     }
 
     @PostMapping("/bookservice/books")
@@ -35,5 +37,11 @@ public class BookController {
     public List<BookEntity> deleteBook(@PathVariable("id") String bookId){
         List<BookEntity> bookEntityList = bookService.deleteBook(bookId);
         return bookEntityList;
+    }
+
+    @PutMapping("/bookservice/books/{id}")
+    public List<BookEntity> updateBook(@PathVariable("id") String bookId, @RequestBody BookEntity bookEntity){
+        List<BookEntity> bookEntity1 = bookService.updateBook(bookId,bookEntity);
+        return bookEntity1;
     }
 }

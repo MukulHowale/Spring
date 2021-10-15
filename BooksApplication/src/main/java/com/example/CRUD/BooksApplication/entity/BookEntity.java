@@ -1,5 +1,7 @@
 package com.example.CRUD.BooksApplication.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.ArrayList;
