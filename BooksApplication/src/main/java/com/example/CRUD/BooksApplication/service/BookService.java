@@ -71,27 +71,28 @@ public class BookService {
         if (bookEntity1.equals("Id Not Present")) {
             return bookEntities;
         }
-        else{
-            if (bookEntity.getBookName() != null){
+        else {
+            if (bookEntity.getBookName() != null) {
                 bookEntity1.setBookName(bookEntity.getBookName());
             }
-            if(bookEntity.getBookAuthor() != null){
+            if (bookEntity.getBookAuthor() != null) {
                 bookEntity1.setBookAuthor(bookEntity.getBookAuthor());
             }
-            if(bookEntity.getBookPublication() != null){
+            if (bookEntity.getBookPublication() != null) {
                 bookEntity1.setBookPublication(bookEntity.getBookPublication());
             }
-            if(bookEntity.getBookCategory() != null){
+            if (bookEntity.getBookCategory() != null) {
                 bookEntity1.setBookCategory(bookEntity.getBookCategory());
             }
-            if(bookEntity.getBookPages() != null){
+            if (bookEntity.getBookPages() != null) {
                 bookEntity1.setBookPages(bookEntity.getBookPages());
             }
-            if(bookEntity.getBookPrice() != null){
+            if (bookEntity.getBookPrice() != null) {
                 bookEntity1.setBookPrice(bookEntity.getBookPrice());
             }
         }
-        bookEntities.add(bookEntity1);
+        bookRepository.save(bookEntity1);
+
         return bookEntities;
     }
 }
