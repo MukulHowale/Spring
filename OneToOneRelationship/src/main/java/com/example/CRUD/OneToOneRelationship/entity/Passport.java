@@ -1,4 +1,4 @@
-package com.example.CRUD.OneToOneRelationship.Entity;
+package com.example.CRUD.OneToOneRelationship.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,9 +13,11 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Getter
 @Setter
-public class PersonEntity {
+public class Passport {
 
     @Id
-    Long personID;
-    String personName;
+    Long passportId;
+    String passportNumber;
+
+
 }

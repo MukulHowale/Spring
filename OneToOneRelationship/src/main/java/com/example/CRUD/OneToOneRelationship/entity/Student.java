@@ -1,4 +1,4 @@
-package com.example.CRUD.OneToOneRelationship.Entity;
+package com.example.CRUD.OneToOneRelationship.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,15 +7,19 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class AadhaarCardEntity {
+public class Student {
 
     @Id
-    Long aadhaarID;
-    Long aadhaarNumber;
+    Long studentId;
+    String studentName;
+
+    @OneToOne
+    Passport passport;
 }
