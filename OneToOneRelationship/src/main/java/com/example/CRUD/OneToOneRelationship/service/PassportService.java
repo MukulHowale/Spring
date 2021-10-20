@@ -17,4 +17,8 @@ public class PassportService {
 
         return passportRepository.findAll();
     }
+
+    public List<Passport> getAllPassports() {
+        return passportRepository.findAll();
+    }
 }
