@@ -1,11 +1,11 @@
 package com.example.relationships.OneToMany.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -24,6 +24,15 @@ public class Book {
     String bookPages;
     Integer bookPrice;
 
+    @JsonBackReference
     @ManyToOne
     Author author;
+
+    public Author getAuthor(){
+        return author;
+    }
+
+    public void setAuthor(Author author){
+        this.author = author;
+    }
 }

@@ -1,5 +1,7 @@
 package com.example.relationships.OneToMany.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,17 +28,14 @@ public class Author {
 
 
     @OneToMany(mappedBy = "author")
+    @JsonManagedReference
     List<Book> books = new ArrayList<>();
 
-    public List<Book> getAllBooks(){
-        return books;
-    }
-
     public void setBook(Book book){
-        books.add(book);
+        this.books.add(book);
     }
 
     public void removeBook(Book book){
-        books.remove(book);
+        this.books.remove(book);
     }
 }

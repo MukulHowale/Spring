@@ -7,10 +7,10 @@ import lombok.Setter;
 @Getter
 @Setter
 //@NoArgsConstructor
-public class Errors {
-    String errorMsg;
+public class Messages {
+    String msg;
 
-    public Errors(String errorMsg) {
-        this.errorMsg = errorMsg;
+    public Messages(String errorMsg) {
+        this.msg = errorMsg;
     }
 }
