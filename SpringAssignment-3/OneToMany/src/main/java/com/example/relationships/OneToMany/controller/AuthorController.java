@@ -19,14 +19,24 @@ public class AuthorController {
 
     static final Logger log = LoggerFactory.getLogger(OneToManyApplication.class);
 
-    @PostMapping("/author/book")
+    @PostMapping("/author")
     public Object addAuthor(@RequestBody Author author){
-        return authorService.addAuthorAndBook(author);
+        return authorService.addAuthor(author);
     }
 
     @PostMapping("/author/{id}/book")
     public Object assignBookToAuthor(@PathVariable("id") Long authorId,
                                    @RequestBody List<Book> book){
         return authorService.assignBookToAuthor(authorId,book);
+    }
+
+    @GetMapping("/authors")
+    public List<Author> getAllAuthors(){
+        return authorService.getAllAuthors();
+    }
+
+    @GetMapping("/author/{id}")
+    public Object getAuthorById(@PathVariable("id") Long authorId){
+        return authorService.getAuthorById(authorId);
     }
 }
