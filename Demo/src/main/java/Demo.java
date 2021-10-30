@@ -1,16 +1,9 @@
 public class Demo {
     public static void main(String[] args) {
-        int n = 5;
+        long a = 130291875%5;
 
-        int ans = fib(n);
-        System.out.println(ans);
-    }
+        long b = 474356040%5;
 
-    private static int fib(int n) {
-        if(n == 0 || n == 1){
-            return 1;
-        }
-
-        return fib(n-1) + fib(n-2);
+        System.out.println(a + b);
     }
 }
